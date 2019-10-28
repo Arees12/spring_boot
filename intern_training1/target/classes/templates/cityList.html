@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="/city/add">Add New City</a>
+	<ul>
+		<li th:each="city : ${cityList}">
+		<a th:href="${'/city/'+city.id}" th:text="${city.name}"></a>
+		<a th:href="${'/city/delete/'+city.id}" th:text="Delete"></a>
+		</li>
+	</ul>
+</body>
+</html>

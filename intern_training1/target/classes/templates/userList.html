@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="/user/add">Add New User</a>
+<a href="/user/deleteall">Delete all</a>
+	<ul>
+		<li th:each="user : ${userList}">
+		<a th:href="${'/user/'+user.id}" th:text="${user.name}"></a>
+		<a th:href="${'/user/delete/'+user.id}" th:text="Delete"></a>
+		</li>
+	</ul>
+</body>
+</html>
